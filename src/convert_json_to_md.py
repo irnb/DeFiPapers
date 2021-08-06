@@ -3,7 +3,7 @@ import json
 
 
 def main():
-    f = open("results/test.json")
+    f = open("results/arxiv_papers_6_Aug_2021.json")
     data = json.load(f)
 
     value_matrix = []
