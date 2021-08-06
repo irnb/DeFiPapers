@@ -14,7 +14,7 @@ def main():
             [item, data[item]["title"], data[item]["summary"][:data[item]["summary"].index(".")+1], data[item]["pdf url"]]
         )
     writer = MarkdownTableWriter(
-        table_name="example_table",
+        table_name="arxiv_table(updated in 6 Aug 2021) ",
         headers=["number ", "title", "first sentence of summary", "pdf url"],
         value_matrix=value_matrix,
     )
