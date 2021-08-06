@@ -3,7 +3,7 @@ import json
 
 
 def main():
-    f = open("papers.json")
+    f = open("results/test.json")
     data = json.load(f)
 
     value_matrix = []
@@ -11,11 +11,11 @@ def main():
     for item in data:
         temp = data[item]["summary"].find
         value_matrix.append(
-            [item, data[item]["title"], data[item]["summary"][:data[item]["summary"].index(".")+1], data[item]["pdf url"]]
+            [item, data[item]["title"], data[item]["summary"][:data[item]["summary"].index(".")+1], data[item]["pdf url"],data[item]["date"][:10]]
         )
     writer = MarkdownTableWriter(
         table_name="arxiv_table(updated in 6 Aug 2021) ",
-        headers=["number ", "title", "first sentence of summary", "pdf url"],
+        headers=["number ", "title", "first sentence of summary", "pdf url","published"],
         value_matrix=value_matrix,
     )
     print(writer.write_table())

@@ -29,12 +29,16 @@ if __name__ == "__main__":
                     final_result[temp_number] = {
                         "title": result.title,
                         "summary": result.summary,
-                        "pdf url": result.pdf_url
+                        "pdf url": result.pdf_url,
+                        "date" : str(result.published)
                     }
                     print(temp_number, result.title)
                     temp_number = temp_number + 1
+                    if temp_number > 75:
+                        break
+                    
             
         time.sleep(2)
 
-    with open("papers.json", "w") as outfile:
+    with open("results/test.json", "w") as outfile:
         json.dump(final_result, outfile)
