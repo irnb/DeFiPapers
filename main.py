@@ -27,7 +27,9 @@ if __name__ == "__main__":
                 if check:
                     downloaded.append(result.entry_id)
                     final_result[temp_number] = {
-                        result.title: {result.summary: result.pdf_url}
+                        "title": result.title,
+                        "summary": result.summary,
+                        "pdf url": result.pdf_url
                     }
                     print(temp_number, result.title)
                     temp_number = temp_number + 1
